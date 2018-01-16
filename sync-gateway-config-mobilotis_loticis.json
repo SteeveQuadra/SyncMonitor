@@ -1,0 +1,49 @@
+{
+"log": ["*"],
+
+    "databases": 	
+	{
+		"mobilotis": 
+		{
+			"log": ["HTTP", "Auth"],
+			"server": "http://localhost:8091",
+			"bucket": "mobilotis",
+			"username": "mobilotis",
+			"password": "Bl4ckCr0w",
+			"users": 
+			{
+				"commercial": 
+				{
+					"disabled": false, 
+					"admin_channels": ["*"], 
+					"password":"53ct1on4554ud", 
+					"name":"commercial"
+				},
+				"quadra": 
+				{
+					"disabled": false, 
+					"admin_channels": ["*"], 
+					"password":"D4rk4v3ng3r", 
+					"name":"quadra"
+				},
+				"console": 
+				{
+					"disabled": false, 
+					"admin_channels": ["*"], 
+					"password":"56464scdsc_sdv54ef", 
+					"name":"console"
+				}
+			},
+			"enable_shared_bucket_access": true,
+            "import_docs": "continuous",
+			"unsupported": {
+				"replicator_2": true
+			  },
+			"sync": `function (doc, oldDoc) {
+				if (doc.sdk) {
+					channel(doc.sdk);
+				}
+			}`
+		}
+    }
+}
