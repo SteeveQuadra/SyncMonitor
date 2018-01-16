@@ -1,0 +1,5 @@
+/SyncMonitor/bin/Debug
+/SyncMonitor/obj/Debug
+/SyncMonitor/*.user
+/packages
+
