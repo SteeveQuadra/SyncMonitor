@@ -51,8 +51,18 @@ namespace SyncMonitor
 							Console.WriteLine($"{i++} {nom}");
 					}
 
+					if (Console.ReadKey(true).Key == ConsoleKey.R)
+					{
+						Console.WriteLine("Stopping the replicator");
+						replicator.Stop();
+						Console.WriteLine("Waiting 2 seconds ...");
+						Task.Delay(2000).Wait();
+						Console.WriteLine("starting the replicator");
+						replicator.Start();
+
+					}
 					if (Console.ReadKey(true).Key == ConsoleKey.Escape)
-						break;
+					break;
 
 					Task.Delay(500).Wait();
 				}
